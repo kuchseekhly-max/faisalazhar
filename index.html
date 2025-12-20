@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faisal Azhar — UI/UX Designer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+
+<body>
+
+
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Faisal Azhar</a>
+
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#work">Work</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-background">
+                <div class="glow-blob blob-1"></div>
+                <div class="glow-blob blob-2"></div>
+                <div class="glow-blob blob-3"></div>
+            </div>
+            <div class="container">
+                <h1 class="hero-title">
+                    <span class="line-wrapper">
+                        <span class="reveal-text"><span class="text-white">UI/UX Designer</span> crafting</span>
+                    </span>
+                    <span class="line-wrapper">
+                        <span class="reveal-text delay-1">intuitive software and</span>
+                    </span>
+                    <span class="line-wrapper">
+                        <span class="reveal-text delay-2">mobile experiences.</span>
+                    </span>
+                </h1>
+                <div class="hero-sub">
+                    <p id="typewriter" class="typing-container"></p><span class="cursor">|</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Back to Top Button -->
+        <button id="backToTop" class="back-to-top" aria-label="Back to Top">
+            ↑
+        </button>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Typewriter Effect
+                const text = "Specializing in Figma, prototyping, and complex systems.";
+                const typeWriterElement = document.getElementById('typewriter');
+                let i = 0;
+
+                setTimeout(() => {
+                    function type() {
+                        if (i < text.length) {
+                            typeWriterElement.innerHTML += text.charAt(i);
+                            i++;
+                            setTimeout(type, 40);
+                        }
+                    }
+                    type();
+                }, 1500);
+
+                // Back to Top Logic
+                const backToTopBtn = document.getElementById("backToTop");
+
+                window.addEventListener("scroll", () => {
+                    if (window.scrollY > 500) {
+                        backToTopBtn.classList.add("visible");
+                    } else {
+                        backToTopBtn.classList.remove("visible");
+                    }
+                });
+
+                backToTopBtn.addEventListener("click", () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+                });
+
+                // Mobile Menu Logic
+                const hamburger = document.querySelector(".hamburger");
+                const navLinks = document.querySelector(".nav-links");
+
+                if (hamburger) {
+                    hamburger.addEventListener("click", () => {
+                        hamburger.classList.toggle("active");
+                        navLinks.classList.toggle("active");
+                    });
+
+                    document.querySelectorAll(".nav-links li a").forEach(link => {
+                        link.addEventListener("click", () => {
+                            hamburger.classList.remove("active");
+                            navLinks.classList.remove("active");
+                        });
+                    });
+                }
+            });
+        </script>
+
+        <!-- Work Section: Sticky Title + Stacked Cards -->
+        <section id="work" class="work-section-pinned">
+            <div class="container pinned-container">
+
+                <!-- Sticky Sidebar -->
+                <div class="work-sticky-title">
+                    <div class="title-wrapper">
+
+                        <h2>My<br>Work</h2>
+                    </div>
+                </div>
+
+                <!-- Scrolling Cards Column -->
+                <div class="work-cards-column">
+
+                    <!-- Project 1 -->
+                    <div class="project-card sticky-card">
+                        <div class="card-inner">
+                            <div class="card-image">
+                                <img src="assets/zoo-thumbnail-final.png" alt="Zoo Application Interface"
+                                    class="project-img">
+                            </div>
+                            <div class="card-content">
+                                <div class="card-head">
+                                    <h3>Zoo Application</h3>
+
+                                </div>
+                                <div class="card-tags">
+                                    <span>Adobe Illustrator</span>
+                                    <span>Figma</span>
+                                    <span>Adobe Photoshop</span>
+                                </div>
+                                <p class="card-desc">iOS app concept with a map interface that helps visitors get
+                                    directions to animals, places to eat, and other places of interest.</p>
+                                <a href="#" class="btn-arrow view-case-study"
+                                    data-src="https://remyjouni.dev/img/1-Overview.1bdbbe70.webp,https://remyjouni.dev/img/2-Understanding_the_User.2b8f19bc.webp,https://remyjouni.dev/img/3-Starting_the_design.faa62f72.webp,https://remyjouni.dev/img/4-Refining_the_design.058b6d3f.webp">View
+                                    Case Study ↗</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card sticky-card">
+                        <div class="card-inner">
+                            <div class="card-image">
+                                <img src="assets/med-reminder-final.png" alt="Medication Reminder Interface"
+                                    class="project-img">
+                            </div>
+                            <div class="card-content">
+                                <div class="card-head">
+                                    <h3>Medication Reminder</h3>
+
+                                </div>
+                                <div class="card-tags">
+                                    <span>Figma</span>
+                                    <span>Adobe Illustrator</span>
+                                    <span>Android Concept</span>
+                                </div>
+                                <p class="card-desc">Android app concept to remind people to take their medication on
+                                    time, and to manage their inventory of medicine.</p>
+                                <a href="#" class="btn-arrow view-case-study"
+                                    data-src="https://remyjouni.dev/img/1-Overview.390f0b33.webp,https://remyjouni.dev/img/2-Understanding_the_User.095b4838.webp,https://remyjouni.dev/img/3-Starting_the_design.3393e935.webp,https://remyjouni.dev/img/4-Refining_the_design.1399b737.webp">View
+                                    Case Study ↗</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card sticky-card">
+                        <div class="card-inner">
+                            <div class="card-image">
+                                <img src="assets/taka-news-thumbnail.png" alt="Taka News App Interface"
+                                    class="project-img">
+                            </div>
+                            <div class="card-content">
+                                <div class="card-head">
+                                    <h3>Taka News App</h3>
+
+                                </div>
+                                <div class="card-tags">
+                                    <span>Figma</span>
+                                    <span>News Aggregator</span>
+                                    <span>Mobile App</span>
+                                </div>
+                                <p class="card-desc">News aggregation app for the Arab-World that provides users with
+                                    articles that interest them.</p>
+                                <a href="#" class="btn-arrow view-case-study"
+                                    data-src="https://remyjouni.dev/img/Taka_App_Behance.c8c1498c.webp">View Project
+                                    Details ↗</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 (Shura System) -->
+                    <div class="project-card sticky-card">
+                        <div class="card-inner">
+                            <div class="card-image">
+                                <img src="assets/shura-system-thumbnail.png" alt="Shura System Interface"
+                                    class="project-img">
+                            </div>
+                            <div class="card-content">
+                                <div class="card-head">
+                                    <h3>Shura System</h3>
+
+                                </div>
+                                <div class="card-tags">
+                                    <span>Knowledge Base</span>
+                                    <span>SaaS</span>
+                                    <span>Web App</span>
+                                </div>
+                                <p class="card-desc">A knowledge base system with communication and file management
+                                    features that enables users to collaborate in the best way possible.</p>
+                                <a href="#" class="btn-arrow view-case-study"
+                                    data-src="https://remyjouni.dev/img/Shura_Behance.0770febd.webp">View Project
+                                    Details ↗</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 (Telework Pro) -->
+                    <div class="project-card sticky-card">
+                        <div class="card-inner">
+                            <div class="card-image">
+                                <img src="assets/telework-thumbnail.png" alt="Telework Pro Interface"
+                                    class="project-img">
+                            </div>
+                            <div class="card-content">
+                                <div class="card-head">
+                                    <h3>Telework Pro</h3>
+
+                                </div>
+                                <div class="card-tags">
+                                    <span>SaaS</span>
+                                    <span>Dashboard</span>
+                                    <span>Figma</span>
+                                </div>
+                                <p class="card-desc">A communicating and time tracking system that empowers users while
+                                    working remotely.</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section">
+            <div class="container pinned-container">
+                <!-- Sticky Title Wrapper -->
+                <div class="work-sticky-title">
+                    <div class="title-wrapper">
+                        <h2>My<br>Skills</h2>
+                    </div>
+                </div>
+                <div class="skills-content">
+                    <div class="skills-list">
+                        <h3>Design Tools</h3>
+                        <ul>
+                            <li>Figma</li>
+                            <li>Adobe XD</li>
+                            <li>Adobe Photoshop</li>
+                            <li>Adobe Illustrator</li>
+                            <li>Adobe InDesign</li>
+                            <li>Adobe After Effects</li>
+                        </ul>
+                    </div>
+                    <div class="skills-list">
+                        <h3>Development</h3>
+                        <ul>
+                            <li>HTML/CSS</li>
+                            <li>Javascript</li>
+                            <li>React JS</li>
+                            <li>Next JS 13</li>
+                            <li>VueJS</li>
+                            <li>Tailwind CSS</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section: Sticky Roadmap -->
+        <section id="process" class="process-section">
+            <div class="container pinned-container">
+
+                <!-- Sticky Sidebar -->
+                <div class="process-sticky-title">
+                    <div class="title-wrapper">
+
+                        <h2>My<br>Process</h2>
+                    </div>
+                </div>
+
+                <!-- Scrolling Roadmap -->
+                <div class="roadmap-column">
+                    <div class="roadmap-line"></div>
+
+                    <!-- Step 1 -->
+                    <div class="roadmap-step anim-step">
+                        <div class="step-number">01</div>
+                        <div class="step-content">
+                            <h3>Discovery & Research</h3>
+                            <p>We start by diving deep into your goals. I conduct stakeholder interviews and user
+                                research to understand the "why" before we touch the interface.</p>
+                            <ul class="step-tags">
+                                <li>User Interviews</li>
+                                <li>Competitor Analysis</li>
+                                <li>Problem Definition</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="roadmap-step anim-step">
+                        <div class="step-number">02</div>
+                        <div class="step-content">
+                            <h3>Strategy & Wireframing</h3>
+                            <p>Translating insights into structure. I build low-fidelity wireframes in FigJam to map out
+                                user flows and information architecture without getting distracted by styles.</p>
+                            <ul class="step-tags">
+                                <li>User Flows</li>
+                                <li>Low-fi Wireframes</li>
+                                <li>Information Architecture</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="roadmap-step anim-step">
+                        <div class="step-number">03</div>
+                        <div class="step-content">
+                            <h3>Visual Design</h3>
+                            <p>This is where the magic happens. I create high-fidelity UI in Figma, establishing a
+                                design system with components, variables, and auto-layout accessibility.</p>
+                            <ul class="step-tags">
+                                <li>High-fi UI</li>
+                                <li>Design System</li>
+                                <li>Prototyping</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="roadmap-step anim-step">
+                        <div class="step-number">04</div>
+                        <div class="step-content">
+                            <h3>Handoff & Launch</h3>
+                            <p>I don't just send files; I work with your developers. I provide detailed specs, annotated
+                                screens, and asset exports to ensure the code matches the pixel-perfect design.</p>
+                            <ul class="step-tags">
+                                <li>Dev Handoff</li>
+                                <li>QA Testing</li>
+                                <li>Launch Support</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section: Massive -->
+        <section id="contact" class="contact-section">
+            <div class="container pinned-container">
+                <div class="work-sticky-title">
+                    <div class="title-wrapper">
+                        <h2>My<br>Email</h2>
+                    </div>
+                </div>
+                <!-- Right Column for Email (matches Cards/Roadmap column) -->
+                <div class="contact-block">
+                    <a href="mailto:faisalazhar1701@gmail.com" class="giant-link">
+                        faisalazhar1701<br>@gmail.com
+                    </a>
+                    <!-- Social links removed as requested -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Faisal Azhar.</p>
+            <p>Built with code.</p>
+        </div>
+    </footer>
+
+    <!-- Case Study Modal -->
+    <div id="case-study-modal" class="modal">
+        <span class="close-modal">&times;</span>
+        <div class="modal-content">
+            <img id="case-study-img" src="" alt="Case Study">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
